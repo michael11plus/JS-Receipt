@@ -87,3 +87,20 @@ function getTotalPrice() {
     console.log(`TOTAL PRICE: $${receiptTotal}`);
 }
 
+function getMostExpensiveItem() {
+    let k = 1;
+    let mostExpensiveItem = receiptArray[0].product;
+    let highestPrice = receiptArray[0].price;
+
+    while (k < (receiptArray.length)) {
+        if (receiptArray[k].price > highestPrice) {
+            mostExpensiveItem = receiptArray[k].product;
+            highestPrice = receiptArray[k].price;
+            k++;
+        } else {
+            k++;
+        }
+    }
+
+    console.log(`Most expensive item: ${mostExpensiveItem}. \nPrice: $${highestPrice}`)
+}
