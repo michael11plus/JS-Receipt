@@ -92,7 +92,7 @@ function getMostExpensiveItem() {
     let mostExpensiveItem = receiptArray[0].product;
     let highestPrice = receiptArray[0].price;
 
-    while (k < (receiptArray.length)) {
+    while (k < receiptArray.length) {
         if (receiptArray[k].price > highestPrice) {
             mostExpensiveItem = receiptArray[k].product;
             highestPrice = receiptArray[k].price;
@@ -103,4 +103,15 @@ function getMostExpensiveItem() {
     }
 
     console.log(`Most expensive item: ${mostExpensiveItem}. \nPrice: $${highestPrice}`)
+}
+
+function getAveragePrice() {
+    let m = 0;
+    let totalOneItem = 0;
+    while (m < receiptArray.length) {
+        totalOneItem = totalOneItem + receiptArray[m].price;
+        m++;
+    }
+
+    console.log(`Average price for each item: $${(totalOneItem / receiptArray.length).toFixed(2)}`);
 }
